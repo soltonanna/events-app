@@ -1,0 +1,13 @@
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    color: var(--color-primary);
+    font-size: 3rem;
+}
+
+.content > p {
+    color: var(--color-primary);
+    font-size: 20px;
+}

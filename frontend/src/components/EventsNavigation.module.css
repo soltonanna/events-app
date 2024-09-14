@@ -1,0 +1,36 @@
+.header {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.list a {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out; 
+}
+
+
+.list a:active,
+.list a.active {
+  background-color: var(--color-background);
+  color: var(--color-primary-hover);
+  padding: 1rem 1.5rem;
+}
+
+.list a:hover,
+.list a:active:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-primary);
+  padding: 1rem 1.5rem;
+}
