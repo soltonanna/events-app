@@ -3,7 +3,8 @@
 <img src="Screenshot3.png" alt="Beer Store" /><br />
 
 ## Events App
-Multi-Page SPA with React Router. Can fetch events from backend, save and edit events; <br> (Used: Routes, Nested Routes, Link, NavLink; Methods loader() and action(), json() and redirect; Hooks: useRouteLoaderData, useRouteError, useLoaderData,useActionData, useNavigate, useNavigation, useSubmit; defer, Await, Suspense)
+Multi-Page SPA with React Router. Can fetch events from backend, save and edit events; <br> <br/> 
+Used:<ul><li>Routes, Nested Routes, Link, NavLink;</li> <li>Methods loader() and action(), json() and redirect;</li> <li>Hooks: useRouteLoaderData, useRouteError, useLoaderData,useActionData, useNavigate, useNavigation, useSubmit;</li> <li>defer, Await, Suspense</li></ul>
 
 ## Install and Run Backend
 
