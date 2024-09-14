@@ -9,6 +9,10 @@
   border: none;
 }
 
+.newsletter input {
+  color: var(--color-primary);
+}
+
 .newsletter button {
   background-color: var(--color-primary);
   border-top-right-radius: 4px;

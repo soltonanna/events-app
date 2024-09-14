@@ -1,18 +1,27 @@
+import { lazy, Suspense } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import RootLayout from './pages/Root';
+import EventsRootLayout from './pages/EventsRoot';
+
+import { action as manipulateEventAction } from './components/EventForm';
+
+import HomePage from './pages/Home';
+import NewEventPage from './pages/NewEvent';
 import EditEventPage from './pages/EditEvent';
+
 import ErrorPage from './pages/Error';
+
 import EventDetailPage, {
   loader as eventDetailLoader,
   action as deleteEventAction,
 } from './pages/EventDetail';
-import EventsPage, { loader as eventsLoader } from './pages/Events';
-import EventsRootLayout from './pages/EventsRoot';
-import HomePage from './pages/Home';
-import NewEventPage from './pages/NewEvent';
-import RootLayout from './pages/Root';
-import { action as manipulateEventAction } from './components/EventForm';
-import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
+
+import NewsletterPage, { 
+  action as newsletterAction 
+} from './pages/Newsletter';
+
+const EventsPage = lazy(() => import('./pages/Events'));
 
 const router = createBrowserRouter([
   {
@@ -27,8 +36,13 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <EventsPage />,
-            loader: eventsLoader,
+            element: (
+              <Suspense fallback={<p>Loading...</p>}>
+                <EventsPage />
+              </Suspense>
+            ),
+            loader: () => import('./pages/Events').then(module => module.loader()), 
+            // For Lazy Loading
           },
           {
             path: ':eventId',
